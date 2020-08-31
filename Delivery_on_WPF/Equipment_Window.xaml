@@ -1,0 +1,39 @@
+﻿<Window x:Class="Delivery_on_WPF.Equipment_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Delivery_on_WPF"
+        mc:Ignorable="d"
+        Title="Equipment_Window" Height="500" Width="900">
+    <Grid>
+        <CheckBox x:Name="Add_Data_CheckBox" Content="Add data" HorizontalAlignment="Left" Margin="15,21,0,0" VerticalAlignment="Top" FontSize="14" Checked="Add_Data_CheckBox_Checked" BorderThickness="1" VerticalContentAlignment="Center"/>
+        <Button Content="Ok" HorizontalAlignment="Left" Margin="748,415,0,0" VerticalAlignment="Top" Width="121" FontSize="15" Height="36" Click="Button_Click"/>
+        <Label Content="Product`s name" HorizontalAlignment="Left" Margin="15,68,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="15,99,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="Income" HorizontalAlignment="Left" Margin="15,130,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label Content="Consumption" HorizontalAlignment="Left" Margin="15,161,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="Producer" HorizontalAlignment="Left" Margin="15,192,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="prod_name" HorizontalAlignment="Left" Height="22" Margin="135,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="prod_name_TextChanged"/>
+        <TextBox x:Name="amount" HorizontalAlignment="Left" Height="23" Margin="135,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="amount_TextChanged"/>
+        <TextBox x:Name="income" HorizontalAlignment="Left" Height="23" Margin="135,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="income_TextChanged"/>
+        <TextBox x:Name="consumption" HorizontalAlignment="Left" Height="23" Margin="135,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="consumption_TextChanged"/>
+        <TextBox x:Name="producer" HorizontalAlignment="Left" Height="23" Margin="135,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="producer_TextChanged"/>
+        <CheckBox x:Name="Delete_Data_CheckBox" Content="Delete data by product`s name:" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top" Width="223" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="prod_name_to_delete_TextBox" HorizontalAlignment="Left" Height="23" Margin="10,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" TextChanged="TextBox_TextChanged"/>
+        <CheckBox x:Name="Create_table_CheckBox" Content="Create table (don`t use it if you created table before)" HorizontalAlignment="Left" Margin="10,415,0,0" VerticalAlignment="Top" Width="353" FontSize="14" Checked="CheckBox_Checked" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="Show_Data_CheckBox" Content="Show data" HorizontalAlignment="Left" Margin="331,21,0,0" VerticalAlignment="Top" FontSize="14" Width="118" Checked="Show_Data_CheckBox_Checked" VerticalContentAlignment="Center" Unchecked="Show_Data_CheckBox_Unchecked"/>
+        <DataGrid x:Name="Show_data_DataGrid" HorizontalAlignment="Left" Height="343" Margin="295,39,0,0" VerticalAlignment="Top" Width="589" SelectionChanged="Show_data_DataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Product`s name" Binding="{Binding Product_name}" />
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" />
+                <DataGridTextColumn Header="Income" Binding="{Binding Income}" />
+                <DataGridTextColumn Header="Consumption" Binding="{Binding Consumption}" />
+                <DataGridTextColumn Header="Producer" Binding="{Binding Producer}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Back_Button" Content="Back" HorizontalAlignment="Left" Margin="600,415,0,0" VerticalAlignment="Top" Width="128" Height="36" FontSize="14" Click="Back_Button_Click"/>
+
+
+    </Grid>
+</Window>
